@@ -22,9 +22,14 @@ public class Plateau
 	public Quartier[][] mPlateau = new Quartier[3][3];
 	public ArrayList<Personnage> mTasCarte;
 	public Mechant mMechant;
+	private int mNbCase0;
+	private int mTour; // 0 correspond au tour des detective et 1 au tour du mechant
 
 	public Plateau() {
 		Random rand = new Random();
+		this.mTour = 0;
+		this.mNbCase0 = 9;
+
 		mDetective[0] = new Detective("Holmes", 11);
 		mDetective[1] = new Detective("Watson", 3);
 		mDetective[2] = new Detective("M. Le Chien", 7);
@@ -56,11 +61,27 @@ public class Plateau
 		mTasCarte.remove(0);
 	}
 
+	public void setNbCase0(int nbCase0) {
+		this.mNbCase0 = nbCase0;
+	}
+
+	public int getNbCase0() {
+		return (this.mNbCase0);
+	}
+
+	public void changeTour() {
+		this.mTour = (this.mTour == 0) ? 1 : 0;
+	}
+
+	public int getTour() {
+		return (this.mTour);
+	}
+
 	public void displayPlateau() {
 		String couleur = RESET;
 		String signe = "   ";
 
-		System.out.print("\n\n\n\n\n\n      ");
+		System.out.print("\n\n      ");
 		System.out.print(ftRond(0) + "      " + ftRond(1) + "      " + ftRond(2) + " \n   ");
 		for (int i = 0 ; i < 3 ; i++) {
 			for (int j = 0 ; j < 3 ; j++) {
@@ -112,7 +133,7 @@ public class Plateau
 			System.out.print("\n   ");
 		}
 		System.out.print("   " + ftRond(8) + "      " + ftRond(7) + "      " + ftRond(6) + " ");
-		System.out.println("\n\n\n");
+		System.out.println("\n\n");
 	}
 
 	private String ftRond(int num) {

@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class JetonHolmesAlibi extends JetonAction
 {
-	private int mPileFace; // 0 = Holmes, 1 = Alibi et -1 = Rien du tout
 	private Scanner scanner = new Scanner(System.in);
 
 	public JetonHolmesAlibi() {
@@ -12,7 +11,7 @@ public class JetonHolmesAlibi extends JetonAction
 		this.mPileFace = -1;
 	}
 
-	public void fonctionHolmes(Plateau plateau) {
+	public void fonction1(Plateau plateau) {
 		int nb = 0;
 
 		System.out.println("Tapez 1 ou 2 pour avancer de 1 ou 2 cases avec Holmes");
@@ -29,7 +28,7 @@ public class JetonHolmesAlibi extends JetonAction
 			plateau.mDetective[0].setPosition(plateau.mDetective[0].getPosition() + nb);
 	}
 
-	public void fonctionAlibi(Plateau plateau) {
+	public void fonction2(Plateau plateau) {
 		// Ecrire code ici
 	}
 }

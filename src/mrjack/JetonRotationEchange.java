@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class JetonRotationEchange extends JetonAction
 {
-	private int mPileFace; // 0 = Rotation, 1 = Joker et -1 = Rien du tout
 	private Scanner scanner = new Scanner(System.in);
 
 	public JetonRotationEchange() {
@@ -12,7 +11,7 @@ public class JetonRotationEchange extends JetonAction
 		this.mPileFace = -1;
 	}
 
-	public void fonctionRotation(Plateau plateau) {
+	public void fonction1(Plateau plateau) {
 		int nb = 0;
 		int rota = -1;
 		int i;
@@ -35,7 +34,7 @@ public class JetonRotationEchange extends JetonAction
 		plateau.mPlateau[i][j].setPosition(rota - 1);
 	}
 
-	public void fonctionEchange(Plateau plateau) {
+	public void fonction2(Plateau plateau) {
 		int quartier1 = 0;
 		int quartier2 = 0;
 		int i;

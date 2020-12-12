@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class JetonWatsonLeChien extends JetonAction
 {
-	private int mPileFace; // 0 = Watson, 1 = LeChien et -1 = Rien du tout
 	private Scanner scanner = new Scanner(System.in);
 
 	public JetonWatsonLeChien() {
@@ -12,7 +11,7 @@ public class JetonWatsonLeChien extends JetonAction
 		this.mPileFace = -1;
 	}
 
-	public void fonctionWatson(Plateau plateau) {
+	public void fonction1(Plateau plateau) {
 		int nb = 0;
 
 		System.out.println("Tapez 1 ou 2 pour avancer de 1 ou 2 cases avec Watson");
@@ -29,7 +28,7 @@ public class JetonWatsonLeChien extends JetonAction
 			plateau.mDetective[1].setPosition(plateau.mDetective[1].getPosition() + nb);
 	}
 
-	public void fonctionLeChien(Plateau plateau) {
+	public void fonction2(Plateau plateau) {
 		int nb = 0;
 
 		System.out.println("Tapez 1 ou 2 pour avancer de 1 ou 2 cases avec Monsieur Le Chien");
