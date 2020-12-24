@@ -22,6 +22,7 @@ public class Plateau
 	public Quartier[][] mPlateau = new Quartier[3][3];
 	public ArrayList<Personnage> mTasCarte;
 	public Mechant mMechant;
+	public int flag;
 	private int mNbCase0;
 	private int mTour; // 0 correspond au tour des detective et 1 au tour du mechant
 
@@ -30,6 +31,7 @@ public class Plateau
 		this.mTour = 0;
 		this.mNbCase0 = 9;
 
+		flag = -1;
 		mDetective[0] = new Detective("Holmes", 11);
 		mDetective[1] = new Detective("Watson", 3);
 		mDetective[2] = new Detective("M. Le Chien", 7);

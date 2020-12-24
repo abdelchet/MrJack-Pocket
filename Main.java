@@ -23,6 +23,7 @@ public class Main
 
 		plateau.displayPlateau();
 		for (int nbTour = 1 ; nbTour <= 8 ; nbTour++) {
+			plateau.flag = -1;
 			if (nbTour % 2 == 1) // impair
 				for (int i = 0 ; i < 4 ; i++) jeton.get(i).ftHasard();
 			else // pair
@@ -139,6 +140,10 @@ public class Main
 				index = quartierVisible.get(i);
 				if (plateau.mPlateau[index / 3][index % 3].getPileFace() == 0) {
 					plateau.mPlateau[index / 3][index % 3].setPileFace(1);
+					if (plateau.mPlateau[index / 3][index % 3].getPerso().getNom() == "Gris") {
+						plateau.mPlateau[index / 3][index % 3].setPileFace(-1);
+						plateau.mPlateau[index / 3][index % 3].setPosition(-1);
+					}
 					j++;
 				}
 			}
@@ -151,6 +156,10 @@ public class Main
 				index = quartierInVisible.get(i);
 				if (plateau.mPlateau[index / 3][index % 3].getPileFace() == 0) {
 					plateau.mPlateau[index / 3][index % 3].setPileFace(1);
+					if (plateau.mPlateau[index / 3][index % 3].getPerso().getNom() == "Gris") {
+						plateau.mPlateau[index / 3][index % 3].setPileFace(-1);
+						plateau.mPlateau[index / 3][index % 3].setPosition(-1);
+					}
 					j++;
 				}
 			}

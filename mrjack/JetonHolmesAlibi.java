@@ -43,8 +43,14 @@ public class JetonHolmesAlibi extends JetonAction
                                 	}
                         	}
                 	}
-			if (plateau.mPlateau[i2][j2].getPileFace() == 0)
+			if (plateau.mPlateau[i2][j2].getPileFace() == 0) {
 				plateau.mPlateau[i2][j2].setPileFace(1);
+				if (plateau.mPlateau[i2][j2].getPerso().getNom() == "Gris") {
+					plateau.mPlateau[i2][j2].setPileFace(-1);
+					plateau.mPlateau[i2][j2].setPosition(-1);
+				}
+				plateau.setNbCase0(plateau.getNbCase0() - 1);
+			}
 			plateau.mTasCarte.remove(0);
 		}
 		else {

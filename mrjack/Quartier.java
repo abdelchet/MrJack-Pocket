@@ -2,7 +2,7 @@ package mrjack;
 
 public class Quartier
 {
-	private int mPosition; /* Position du mur ; 0 vers le nord
+	private int mPosition; /* Position du mur ; -1 pas de mur, 0 vers le nord
 	1 vers l'est, 2 vers le sud et 3 vers l'ouest */
 	private Personnage mPerso;
 	private int mPileFace; /* 0 pour pile (etat de base)
